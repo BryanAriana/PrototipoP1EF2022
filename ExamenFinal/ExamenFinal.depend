@@ -16,14 +16,15 @@
 	<iomanip>
 	<cstdlib>
 
-1655403763 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
+1655407404 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
 
-1655406935 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
+1655408135 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
 	"menus.h"
 	"productos.h"
 	"clientes.h"
 	"vendedores.h"
 	"marcas.h"
+	"lineas.h"
 	<iostream>
 	<fstream>
 	<iomanip>
@@ -34,7 +35,7 @@
 
 1655399219 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\catalogos.h
 
-1655406143 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\productos.cpp
+1655407404 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\productos.cpp
 	<iostream>
 	<istream>
 	<fstream>
@@ -46,9 +47,9 @@
 	"productos.h"
 	"menus.h"
 
-1655403763 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\productos.h
+1655407404 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\productos.h
 
-1655404751 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\clientes.cpp
+1655407404 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\clientes.cpp
 	"clientes.h"
 	<iostream>
 	<istream>
@@ -60,9 +61,9 @@
 	<iomanip>
 	"menus.h"
 
-1655403763 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\clientes.h
+1655407404 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\clientes.h
 
-1655405245 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\vendedores.cpp
+1655407404 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\vendedores.cpp
 	"vendedores.h"
 	<iostream>
 	<istream>
@@ -74,7 +75,33 @@
 	<iomanip>
 	"menus.h"
 
-1655404751 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\vendedores.h
+1655407404 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\vendedores.h
 
-1655407011 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\marcas.h
+1655407404 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\marcas.h
+
+1655408111 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\marcas.cpp
+	<iostream>
+	<istream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	"marcas.h"
+	"menus.h"
+
+1655408111 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\lineas.h
+
+1655408166 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\lineas.cpp
+	<iostream>
+	<istream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	"lineas.h"
+	"menus.h"
 

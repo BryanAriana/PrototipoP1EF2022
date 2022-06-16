@@ -3,6 +3,7 @@
 #include "clientes.h"
 #include "vendedores.h"
 #include "marcas.h"
+#include "lineas.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -83,6 +84,7 @@ void menus::catalogo(){
         clientes po;
         vendedores ven;
         marcas mar;
+        lineas lin;
  switch(choice)
         {
     case 1:
@@ -98,7 +100,7 @@ void menus::catalogo(){
 		mar.menu();
 		break;
 	case 5:
-		/*mar.menu();*/
+		lin.menu();
 		break;
 	case 6:
 		menuGeneral();
