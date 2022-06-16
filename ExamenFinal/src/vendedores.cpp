@@ -1,4 +1,4 @@
-#include "clientes.h"
+#include "vendedores.h"
 #include <iostream>
 #include <istream>
 #include <fstream>
@@ -9,16 +9,16 @@
 #include <iomanip>
 #include "menus.h"
 using namespace std;
-clientes::clientes()
+vendedores::vendedores()
 {
     //ctor
 }
 
-clientes::~clientes()
+vendedores::~vendedores()
 {
     //dtor
 }
-void clientes::menu()
+void vendedores::menu()
 {
     int choice;
     char x;
@@ -29,12 +29,12 @@ void clientes::menu()
     system ("cls");
 
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t                 | Clientes |"<<endl;
+        cout << "\t\t\t                 | Vendedores |"<<endl;
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t  1. Agregar nuevo Cliente"<<endl;
-        cout << "\t\t\t  2. Ver Clientes"<<endl;
-        cout << "\t\t\t  3. Borrar Clientes"<<endl;
-        cout << "\t\t\t  4. Modificar Clientes"<<endl;
+        cout << "\t\t\t  1. Agregar nuevo Vendedor"<<endl;
+        cout << "\t\t\t  2. Ver Vendores"<<endl;
+        cout << "\t\t\t  3. Borrar Vendores"<<endl;
+        cout << "\t\t\t  4. Modificar Vendedores"<<endl;
         cout << "\t\t\t  5. Salir"<<endl;
 
         cout << "\t\t\t *********************************************"<<endl;
@@ -42,7 +42,7 @@ void clientes::menu()
         cout << "\t\t\t *********************************************"<<endl;
         cout << "\t\t\t Selecciona tu opcion: "<<endl;
         cin>>choice;
-        menus po;
+        menus ven;
 
     switch(choice)
         {
@@ -50,7 +50,7 @@ void clientes::menu()
         do
         {
         insert();
-        cout<<"\n\t\t\t Agrega otro cliente(Y,N): ";
+        cout<<"\n\t\t\t Agrega otro vendedor(Y,N): ";
     		cin>>x;
 		}while(x=='y'||x=='Y');
 		break;
@@ -64,31 +64,31 @@ void clientes::menu()
 		modify();
 		break;
 	case 5:
-		po.menuGeneral();
+		ven.menuGeneral();
 	default:
 		cout << "\t\t\t Opcion invalida...Por favor prueba otra vez..";
 	}
 	getch();
     }while(choice!= 5);
 }
-void clientes::insert()
+void vendedores::insert()
 {
 string id,nombre,direccion,nit,telefono;
 	system("cls");
 	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-	cout<<"\n-------------------------------------------------Agregar datos del Cliente ---------------------------------------------"<<endl;
-	cout<<"\t\t\tIngresa ID del Cliente         : ";
+	cout<<"\n-------------------------------------------------Agregar datos del Vendedor ---------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa ID del Vendedor         : ";
 	cin>>id;
-	cout<<"\t\t\tIngresa Nombre del Cliente     : ";
+	cout<<"\t\t\tIngresa Nombre del Vendedor     : ";
 	cin>>nombre;
-	cout<<"\t\t\tIngresa Direccion del Cliente   : ";
+	cout<<"\t\t\tIngresa Direccion del Vendedor   : ";
 	cin>>direccion;
-	cout<<"\t\t\tIngresa NIT del Cliente   : ";
+	cout<<"\t\t\tIngresa NIT del Vendedor   : ";
 	cin>>nit;
-	cout<<"\t\t\tIngresa Telefono del Cliente   : ";
+	cout<<"\t\t\tIngresa Telefono del Vendedor   : ";
 	cin>>telefono;
-    file.open("registroDeClientes.dat", ios::binary | ios::app | ios::out);
+    file.open("registroDeVendedores.dat", ios::binary | ios::app | ios::out);
 	file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< direccion<<std::left<<std::setw(15)<< nit<<std::left<<std::setw(15)<< telefono<< "\n";
 	file.close();
 	 for( int i = 0; i < 50; i++ ){
@@ -121,14 +121,14 @@ string id,nombre,direccion,nit,telefono;
         sizeof( telefono ) );
     }
 }
-void clientes::display()
+void vendedores::display()
 {
 string id,nombre,direccion,nit,telefono;
 	system("cls");
 	fstream file;
 	int total=0;
-	cout<<"\n------------------------------------------------Productos ----------------------------------------------------------"<<endl;
-	file.open("registroDeClientes.dat",ios::binary|ios::in);
+	cout<<"\n------------------------------------------------Vendedores ----------------------------------------------------------"<<endl;
+	file.open("registroDeVendedores.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay información...";
@@ -140,11 +140,11 @@ string id,nombre,direccion,nit,telefono;
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\t\t\t ID del cliente: "<<id<<endl;
-			cout<<"\t\t\t Nombre del Cliente: "<<nombre<<endl;
-			cout<<"\t\t\t Direccion del Cliente: "<<direccion<<endl;
-			cout<<"\t\t\t NIT del Cliente: "<<nit<<endl;
-			cout<<"\t\t\t Telefono del Cliente: "<<telefono<<endl;
+			cout<<"\t\t\t ID del Vendedor: "<<id<<endl;
+			cout<<"\t\t\t Nombre del Vendedor: "<<nombre<<endl;
+			cout<<"\t\t\t Direccion del Vendedor: "<<direccion<<endl;
+			cout<<"\t\t\t NIT del Vendedor: "<<nit<<endl;
+			cout<<"\t\t\t Telefono del Vendedor: "<<telefono<<endl;
 			cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 			file >> id >> nombre >> direccion >> nit >> telefono;
 		}
@@ -155,15 +155,15 @@ string id,nombre,direccion,nit,telefono;
 	}
 	file.close();
 }
-void clientes::delet()
+void vendedores::delet()
 {
 string id,nombre,direccion,nit,telefono;
 	system("cls");
 	fstream file,file1;
 	string participant_id;
 	int found=0;
-	cout<<"\n-------------------------Cliente a Borrar-------------------------"<<endl;
-	file.open("registroDeClientes.dat",ios::binary|ios::in);
+	cout<<"\n-------------------------Vendedor a Borrar-------------------------"<<endl;
+	file.open("registroDeVendedores.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion...";
@@ -171,7 +171,7 @@ string id,nombre,direccion,nit,telefono;
 	}
 	else
 	{
-		cout<<"\n Ingrese el ID del Cliente que quiere borrar: ";
+		cout<<"\n Ingrese el ID del Vendedor que quiere borrar: ";
 		cin>>participant_id;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
 		file >> id >> nombre >> direccion >> nit >> telefono;
@@ -190,23 +190,23 @@ string id,nombre,direccion,nit,telefono;
 		}
 		if(found==0)
 		{
-			cout<<"\n\t\t\t ID del Cliente no encontrado...";
+			cout<<"\n\t\t\t ID del Vendedor no encontrado...";
 		}
 		file1.close();
 		file.close();
-		remove("registroDeClientes.dat");
-		rename("registro.dat","registroDeClientes.dat");
+		remove("registroDeVendedores.dat");
+		rename("registro.dat","registroDeVendedores.dat");
 	}
 }
-void clientes::modify()
+void vendedores::modify()
 {
     string id,nombre,direccion,nit,telefono;
 	system("cls");
 	fstream file,file1;
 	string participant_id;
 	int found=0;
-	cout<<"\n-------------------------Modificacion de Informacion de Clientes-------------------------"<<endl;
-	file.open("registroDeClientes.dat",ios::binary|ios::in);
+	cout<<"\n-------------------------Modificacion de Informacion de Vendedores-------------------------"<<endl;
+	file.open("registroDeVendedores.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion..,";
@@ -214,7 +214,7 @@ void clientes::modify()
 	}
 	else
 	{
-		cout<<"\n Ingrese ID del Cliente que quiere modificar: ";
+		cout<<"\n Ingrese ID del Vendedor que quiere modificar: ";
 		cin>>participant_id;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
 		file >> id >> nombre >> direccion >> nit >> telefono;
@@ -226,15 +226,15 @@ void clientes::modify()
 			}
 			else
 			{
-				cout<<"\t\t\tIngrese ID del Cliente: ";
+				cout<<"\t\t\tIngrese ID del Vendedor: ";
 				cin>>id;
-				cout<<"\t\t\tIngrese Nombre del Cliente: ";
+				cout<<"\t\t\tIngrese Nombre del Vendedor: ";
 				cin>>nombre;
-				cout<<"\t\t\tIngrese direccion del Cliente: ";
+				cout<<"\t\t\tIngrese direccion del Vendedor: ";
 				cin>>direccion;
-				cout<<"\t\t\tIngrese nit del Cliente: ";
+				cout<<"\t\t\tIngrese nit del Vendedor: ";
 				cin>>nit;
-				cout<<"\t\t\tIngrese telefono del Cliente: ";
+				cout<<"\t\t\tIngrese telefono del Vendedor: ";
 				cin>>telefono;
 				file<<std::left<<std::setw(15)<< id <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< direccion<<std::left<<std::setw(15)<< nit<<std::left<<std::setw(15)<< telefono<< "\n";
 				found++;
@@ -244,7 +244,7 @@ void clientes::modify()
 		}
 		file1.close();
 		file.close();
-		remove("registroDeClientes.dat");
-		rename("registro.dat","registroDeClientes.dat");
+		remove("registroDeVendedores.dat");
+		rename("registro.dat","registroDeVendedores.dat");
 	}
 }

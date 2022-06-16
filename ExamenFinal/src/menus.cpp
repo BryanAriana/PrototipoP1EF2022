@@ -1,6 +1,8 @@
 #include "menus.h"
 #include "productos.h"
 #include "clientes.h"
+#include "vendedores.h"
+#include "marcas.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -79,6 +81,8 @@ void menus::catalogo(){
         cin>>choice;
         productos gomu;
         clientes po;
+        vendedores ven;
+        marcas mar;
  switch(choice)
         {
     case 1:
@@ -88,10 +92,10 @@ void menus::catalogo(){
 		po.menu();
 		break;
 	case 3:
-		/*coma.menu2();*/
+		ven.menu();
 		break;
 	case 4:
-		/*punto.escribirOpcion();*/
+		mar.menu();
 		break;
 	case 5:
 		/*mar.menu();*/

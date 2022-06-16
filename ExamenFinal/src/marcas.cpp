@@ -6,37 +6,35 @@
 #include <cstdlib>
 #include <conio.h>
 #include <iomanip>
-#include "productos.h"
+#include "marcas.h"
 #include "menus.h"
 
 using namespace std;
 
-productos::productos()
+marcas::marcas()
 {
     //ctor
 }
 
-productos::~productos()
+marcas::~marcas()
 {
     //dtor
 }
-void productos::menu()
+void marcas::menu()
 {
     int choice;
     char x;
     do
     {
-
-
     system ("cls");
 
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t                 | Productos |"<<endl;
+        cout << "\t\t\t                 | MARCAS|                    "<<endl;
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t  1. Crear Producto"<<endl;
-        cout << "\t\t\t  2. Ver Productos"<<endl;
-        cout << "\t\t\t  3. Borrar Productos"<<endl;
-        cout << "\t\t\t  4. Modificar Productos"<<endl;
+        cout << "\t\t\t  1. Agregar nueva marca"<<endl;
+        cout << "\t\t\t  2. Ver Marcas"<<endl;
+        cout << "\t\t\t  3. Borrar Marcas"<<endl;
+        cout << "\t\t\t  4. Modificar Marcas"<<endl;
         cout << "\t\t\t  5. Salir"<<endl;
 
         cout << "\t\t\t *********************************************"<<endl;
@@ -44,7 +42,7 @@ void productos::menu()
         cout << "\t\t\t *********************************************"<<endl;
         cout << "\t\t\t Selecciona tu opcion: "<<endl;
         cin>>choice;
-        menus gomu;
+        menus mar;
 
     switch(choice)
         {
@@ -66,16 +64,16 @@ void productos::menu()
 		modify();
 		break;
 	case 5:
-		gomu.menuGeneral();
+		mar.menuGeneral();
 	default:
 		cout << "\t\t\t Opcion invalida...Por favor prueba otra vez..";
 	}
 	getch();
     }while(choice!= 5);
 }
-void productos::insert()
+void marcas::insert()
 {
-string codigo,nombre,marca,existencia,status;
+string codigo,nombre,status;
 	system("cls");
 	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
@@ -84,14 +82,10 @@ string codigo,nombre,marca,existencia,status;
 	cin>>codigo;
 	cout<<"\t\t\tIngresa Nombre del Producto     : ";
 	cin>>nombre;
-	cout<<"\t\t\tIngresa marca del Producto   : ";
-	cin>>marca;
-	cout<<"\t\t\tIngresa la existencia del Producto   : ";
-	cin>>existencia;
 	cout<<"\t\t\tIngresa el status del producto (agotado/disponible)   : ";
 	cin>>status;
-    file.open("registroDeProductos.dat", ios::binary | ios::app | ios::out);
-	file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< marca<<std::left<<std::setw(15)<< existencia<<std::left<<std::setw(15)<< status<< "\n";
+    file.open("registroDeMarcas.dat", ios::binary | ios::app | ios::out);
+	file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
 	file.close();
 	 for( int i = 0; i < 50; i++ ){
       file.write(
@@ -107,30 +101,18 @@ string codigo,nombre,marca,existencia,status;
 
     for( int i = 0; i < 50; i++ ){
       file.write(
-         reinterpret_cast<const char*>(&marca),
-         sizeof( marca ) );
-    }
-
-    for( int i = 0; i < 50; i++ ){
-      file.write(
-         reinterpret_cast<const char*>(&existencia),
-         sizeof( existencia ) );
-    }
-
-    for( int i = 0; i < 50; i++ ){
-      file.write(
         reinterpret_cast<const char*>(&status),
         sizeof( status ) );
     }
 }
-void productos::display()
+void marcas::display()
 {
-string codigo,nombre,marca,existencia,status;
+string codigo,nombre,status;
 	system("cls");
 	fstream file;
 	int total=0;
-	cout<<"\n------------------------------------------------Productos ----------------------------------------------------------"<<endl;
-	file.open("registroDeProductos.dat",ios::binary|ios::in);
+	cout<<"\n------------------------------------------------Marcas ----------------------------------------------------------"<<endl;
+	file.open("registroDeMarcas.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay información...";
@@ -138,17 +120,15 @@ string codigo,nombre,marca,existencia,status;
 	}
 	else
 	{
-		file >> codigo >> nombre >> marca >> existencia >> status;
+		file >> codigo >> nombre >> status;
 		while(!file.eof())
 		{
 			total++;
 			cout<<"\t\t\t Codigo del Producto: "<<codigo<<endl;
 			cout<<"\t\t\t Nombre del Producto: "<<nombre<<endl;
-			cout<<"\t\t\t Marca del Producto: "<<marca<<endl;
-			cout<<"\t\t\t Existencia del Procucto: "<<existencia<<endl;
 			cout<<"\t\t\t Status del Producto: "<<status<<endl;
 			cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-			file >> codigo >> nombre >> marca >> existencia >> status;
+			file >> codigo >> nombre >> status;
 		}
 		if(total==0)
 		{
@@ -157,15 +137,15 @@ string codigo,nombre,marca,existencia,status;
 	}
 	file.close();
 }
-void productos::delet()
+void marcas::delet()
 {
-string codigo,nombre,marca,existencia,status;
+string codigo,nombre,status;
 	system("cls");
 	fstream file,file1;
 	string participant_codigo;
 	int found=0;
-	cout<<"\n-------------------------Producto a Borrar-------------------------"<<endl;
-	file.open("registroDeProductos.dat",ios::binary|ios::in);
+	cout<<"\n-------------------------Marca a Borrar-------------------------"<<endl;
+	file.open("registroDeMarcas.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion...";
@@ -176,19 +156,19 @@ string codigo,nombre,marca,existencia,status;
 		cout<<"\n Ingrese el Codigo del Producto que quiere borrar: ";
 		cin>>participant_codigo;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
-		file >> codigo >> nombre >> marca >> existencia >> status;
+		file >> codigo >> nombre >> status;
 		while(!file.eof())
 		{
 			if(participant_codigo!= codigo)
 			{
-				file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< marca<<std::left<<std::setw(15)<< existencia<<std::left<<std::setw(15)<< status<< "\n";
+				file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
 			}
 			else
 			{
 				found++;
 				cout << "\n\t\t\tBorrado de informacion exitoso";
 			}
-			file >> codigo >> nombre >> marca >> existencia >> status;
+			file >> codigo >> nombre >> status;
 		}
 		if(found==0)
 		{
@@ -196,19 +176,19 @@ string codigo,nombre,marca,existencia,status;
 		}
 		file1.close();
 		file.close();
-		remove("registroDeProductos.dat");
-		rename("registro.dat","registroDeProductos.dat");
+		remove("registroDeMarcas.dat");
+		rename("registro.dat","registroDeMarcas.dat");
 	}
 }
-void productos::modify()
+void marcas::modify()
 {
-    string codigo,nombre,marca,existencia,status;
+string codigo,nombre,status;
 	system("cls");
 	fstream file,file1;
 	string participant_codigo;
 	int found=0;
-	cout<<"\n-------------------------Modificacion de Informacion de Productos-------------------------"<<endl;
-	file.open("registroDeProductos.dat",ios::binary|ios::in);
+	cout<<"\n-------------------------Modificacion de Informacion de Marcas-------------------------"<<endl;
+	file.open("registroDeMarcas.dat",ios::binary|ios::in);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion..,";
@@ -219,34 +199,30 @@ void productos::modify()
 		cout<<"\n Ingrese codigo del producto que quiere modificar: ";
 		cin>>participant_codigo;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
-		file >> codigo >> nombre >> marca >> existencia >> status;
+		file >> codigo >> nombre >> status;
 		while(!file.eof())
 		{
 			if(participant_codigo!=codigo)
 			{
-			 file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< marca<<std::left<<std::setw(15)<< existencia<<std::left<<std::setw(15)<< status<< "\n";
+			 file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
 			}
 			else
 			{
-				cout<<"\t\t\tIngrese Codigo del Producto: ";
+				cout<<"\t\t\tIngrese Codigo de la marca: ";
 				cin>>codigo;
-				cout<<"\t\t\tIngrese Nombre del Producto: ";
+				cout<<"\t\t\tIngrese Nombre de la marca: ";
 				cin>>nombre;
-				cout<<"\t\t\tIngrese Marca del Producto: ";
-				cin>>marca;
-				cout<<"\t\t\tIngrese Existencia del Producto: ";
-				cin>>existencia;
-				cout<<"\t\t\tIngrese statys del Producto (agotado/disponible): ";
+				cout<<"\t\t\tIngrese status del Producto (agotado/disponible): ";
 				cin>>status;
-				file1<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< marca<<std::left<<std::setw(15)<< existencia<<std::left<<std::setw(15)<< status<< "\n";
+				file1<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
 				found++;
 			}
-			file >> codigo >> nombre >> marca >> existencia >> status;
+			file >> codigo >> nombre >> status;
 
 		}
 		file1.close();
 		file.close();
-		remove("registroDeProductos.dat");
-		rename("registro.dat","registroDeProductos.dat");
+		remove("registroDeMarcas.dat");
+		rename("registro.dat","registroDeMarcas.dat");
 	}
 }
