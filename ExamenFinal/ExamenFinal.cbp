@@ -35,14 +35,18 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/clientes.h" />
+		<Unit filename="include/informes.h" />
 		<Unit filename="include/ingreso.h" />
+		<Unit filename="include/lineas.h" />
 		<Unit filename="include/marcas.h" />
 		<Unit filename="include/menus.h" />
 		<Unit filename="include/productos.h" />
 		<Unit filename="include/vendedores.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/clientes.cpp" />
+		<Unit filename="src/informes.cpp" />
 		<Unit filename="src/ingreso.cpp" />
+		<Unit filename="src/lineas.cpp" />
 		<Unit filename="src/marcas.cpp" />
 		<Unit filename="src/menus.cpp" />
 		<Unit filename="src/productos.cpp" />

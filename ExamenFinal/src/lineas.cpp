@@ -31,10 +31,10 @@ void lineas::menu()
         cout << "\t\t\t *********************************************"<<endl;
         cout << "\t\t\t                 | LINEAS|                    "<<endl;
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t  1. Agregar nueva Linea"<<endl;
+        cout << "\t\t\t  1. Agregar nueva linea"<<endl;
         cout << "\t\t\t  2. Ver Lineas"<<endl;
-        cout << "\t\t\t  3. Borrar Linea"<<endl;
-        cout << "\t\t\t  4. Modificar Linea"<<endl;
+        cout << "\t\t\t  3. Borrar Lineas"<<endl;
+        cout << "\t\t\t  4. Modificar Lineas"<<endl;
         cout << "\t\t\t  5. Salir"<<endl;
 
         cout << "\t\t\t *********************************************"<<endl;
@@ -77,12 +77,12 @@ string codigo,nombre,status;
 	system("cls");
 	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
-	cout<<"\n-------------------------------------------------Agregar datos del producto ---------------------------------------------"<<endl;
-	cout<<"\t\t\tIngresa codigo de la Linea         : ";
+	cout<<"\n-------------------------------------------------Agregar datos de la linea ---------------------------------------------"<<endl;
+	cout<<"\t\t\tIngresa codigo de la linea         : ";
 	cin>>codigo;
-	cout<<"\t\t\tIngresa Nombre de la Linea     : ";
+	cout<<"\t\t\tIngresa Nombre de la linea      : ";
 	cin>>nombre;
-	cout<<"\t\t\tIngresa el status de la Linea   : ";
+	cout<<"\t\t\tIngresa el status de la linea     : ";
 	cin>>status;
     file.open("registroDeLineas.dat", ios::binary | ios::app | ios::out);
 	file<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
@@ -124,9 +124,9 @@ string codigo,nombre,status;
 		while(!file.eof())
 		{
 			total++;
-			cout<<"\t\t\t Codigo de la Lineas: "<<codigo<<endl;
-			cout<<"\t\t\t Nombre de la Lineas: "<<nombre<<endl;
-			cout<<"\t\t\t Status de la Lineas: "<<status<<endl;
+			cout<<"\t\t\t Codigo de la linea : "<<codigo<<endl;
+			cout<<"\t\t\t Nombre de la linea : "<<nombre<<endl;
+			cout<<"\t\t\t Status de la linea : "<<status<<endl;
 			cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 			file >> codigo >> nombre >> status;
 		}
@@ -144,7 +144,7 @@ string codigo,nombre,status;
 	fstream file,file1;
 	string participant_codigo;
 	int found=0;
-	cout<<"\n-------------------------linea a Borrar-------------------------"<<endl;
+	cout<<"\n-------------------------linea  a Borrar-------------------------"<<endl;
 	file.open("registroDeLineas.dat",ios::binary|ios::in);
 	if(!file)
 	{
@@ -153,7 +153,7 @@ string codigo,nombre,status;
 	}
 	else
 	{
-		cout<<"\n Ingrese el Codigo del Producto que quiere borrar: ";
+		cout<<"\n Ingrese el Codigo de la linea  que quiere borrar: ";
 		cin>>participant_codigo;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
 		file >> codigo >> nombre >> status;
@@ -172,7 +172,7 @@ string codigo,nombre,status;
 		}
 		if(found==0)
 		{
-			cout<<"\n\t\t\t Codigo del Producto no encontrado...";
+			cout<<"\n\t\t\t Codigo de linea  no encontrado...";
 		}
 		file1.close();
 		file.close();
@@ -187,7 +187,7 @@ string codigo,nombre,status;
 	fstream file,file1;
 	string participant_codigo;
 	int found=0;
-	cout<<"\n-------------------------Modificacion de Informacion de Lineas-------------------------"<<endl;
+	cout<<"\n-------------------------Modificacion de Informacion de lineas-------------------------"<<endl;
 	file.open("registroDeLineas.dat",ios::binary|ios::in);
 	if(!file)
 	{
@@ -196,7 +196,7 @@ string codigo,nombre,status;
 	}
 	else
 	{
-		cout<<"\n Ingrese codigo de la Linea que quiere modificar: ";
+		cout<<"\n Ingrese codigo de la linea que quiere modificar: ";
 		cin>>participant_codigo;
 		file1.open("registro.dat",ios::binary|ios::app | ios::out);
 		file >> codigo >> nombre >> status;
@@ -208,11 +208,11 @@ string codigo,nombre,status;
 			}
 			else
 			{
-				cout<<"\t\t\tIngrese Codigo de la Linea: ";
+				cout<<"\t\t\tIngrese Codigo de la linea : ";
 				cin>>codigo;
-				cout<<"\t\t\tIngrese Nombre de la Linea: ";
+				cout<<"\t\t\tIngrese Nombre de la linea : ";
 				cin>>nombre;
-				cout<<"\t\t\tIngrese status de la Linea : ";
+				cout<<"\t\t\tIngrese status de la linea : ";
 				cin>>status;
 				file1<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< status<< "\n";
 				found++;

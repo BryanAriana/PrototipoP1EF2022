@@ -1,6 +1,7 @@
 #ifndef LINEAS_H
 #define LINEAS_H
 
+
 using namespace std;
 
 class lineas
@@ -13,6 +14,7 @@ class lineas
 		void display();
 		void delet();
 		void modify();
+
     protected:
 
     private:
