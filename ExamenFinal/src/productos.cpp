@@ -40,7 +40,7 @@ void productos::menu()
         cout << "\t\t\t  5. Salir"<<endl;
 
         cout << "\t\t\t *********************************************"<<endl;
-        cout << "\t\t\t Opcion a escoger : [1/2/3/4]"<<endl;
+        cout << "\t\t\t Opcion a escoger : [1/2/3/4/5]"<<endl;
         cout << "\t\t\t *********************************************"<<endl;
         cout << "\t\t\t Selecciona tu opcion: "<<endl;
         cin>>choice;
@@ -234,6 +234,10 @@ void productos::modify()
 				cin>>nombre;
 				cout<<"\t\t\tIngrese Marca del Producto: ";
 				cin>>marca;
+				cout<<"\t\t\tIngrese Existencia del Producto: ";
+				cin>>existencia;
+				cout<<"\t\t\tIngrese statys del Producto (agotado/disponible): ";
+				cin>>status;
 				file1<<std::left<<std::setw(15)<< codigo <<std::left<<std::setw(15)<< nombre <<std::left<<std::setw(15)<< marca<<std::left<<std::setw(15)<< existencia<<std::left<<std::setw(15)<< status<< "\n";
 				found++;
 			}
@@ -242,7 +246,7 @@ void productos::modify()
 		}
 		file1.close();
 		file.close();
-		remove("registroDeProducto.dat");
+		remove("registroDeProductos.dat");
 		rename("registro.dat","registroDeProductos.dat");
 	}
 }

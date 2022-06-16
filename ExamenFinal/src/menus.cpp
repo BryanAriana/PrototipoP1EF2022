@@ -1,5 +1,6 @@
 #include "menus.h"
 #include "productos.h"
+#include "clientes.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -77,13 +78,14 @@ void menus::catalogo(){
         cout << "\t\t\t Selecciona tu opcion: ";
         cin>>choice;
         productos gomu;
+        clientes po;
  switch(choice)
         {
     case 1:
     	gomu.menu();
 		break;
     case 2:
-		/*po.menu();*/
+		po.menu();
 		break;
 	case 3:
 		/*coma.menu2();*/
