@@ -4,6 +4,7 @@
 #include "vendedores.h"
 #include "marcas.h"
 #include "lineas.h"
+#include "informes.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -38,6 +39,7 @@ void menus::menuGeneral(){
     cout << "\t\t\t *********************************************"<<endl;
     cout << "\t\t\t Selecciona tu opcion: ";
     cin>>choice;
+    informes info;
 
  switch(choice)
     {
@@ -45,7 +47,7 @@ void menus::menuGeneral(){
     	catalogo();
 		break;
 	case 2:
-		/*genera.menuprincipalgeneracionnomina();*/
+		info.menu();
 		break;
     case 3:
 	    exit(0);
