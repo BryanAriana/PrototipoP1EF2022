@@ -1,10 +1,4 @@
 #include <iostream>
-
-using namespace std;
-
-int main()
-{
-    #include <iostream>
 #include <conio.h>
 #include "ingreso.h"
 #include "menus.h"
@@ -19,6 +13,8 @@ using std::right;
 using std::fixed;
 using std::showpoint;
 
+//#include <ctime>
+//#include <vector>
 #include <fstream>
 
 using std::ofstream;
@@ -45,5 +41,4 @@ int main(int argc, char *argv[])
     cout<<"\n\t\t\t          ** Hasta la proxima **"<<endl;
 
    return 0;
-}
 }

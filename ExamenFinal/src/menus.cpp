@@ -21,19 +21,16 @@ void menus::menuGeneral(){
 	do
     {
 	system("cls");
-	cout << "\t\t\t *********************************************"<<endl;
-    cout << "\t\t\t    | Sistema de Recursos Humanos - Grupo 6 |"<<endl;
-    cout << "\t\t\t *********************************************"<<endl;
-    cout << "\t\t\t  1. Manteniminetos"<<endl;
-    cout << "\t\t\t  2. Generacion de Nomina"<<endl;
-    cout << "\t\t\t  3. Informes de Nomina"<<endl;
-    cout << "\t\t\t  4. Transferencia bancaria"<<endl;
-    cout << "\t\t\t  5. Generación de Poliza"<<endl;
-    cout << "\t\t\t  6. Impuestos"<<endl;
-    cout << "\t\t\t  7. Salir"<<endl;
+	cout << "\t\t\t *******************************************************************"<<endl;
+    cout << "\t\t\t    | Menu General - Bryan Alejandro Ariana Juarez 9959-21-2832 |"<<endl;
+    cout << "\t\t\t *******************************************************************"<<endl;
+    cout << "\t\t\t  1. Catalogos"<<endl;
+    cout << "\t\t\t  2. Procesos"<<endl;
+    cout << "\t\t\t  3. Informes"<<endl;
+    cout << "\t\t\t  4. Salir"<<endl;
 
     cout << "\t\t\t *********************************************"<<endl;
-    cout << "\t\t\t Opcion a escoger : [1/2/3/4/5/6/7]"<<endl;
+    cout << "\t\t\t Opcion a escoger : [1/2/3/4]"<<endl;
     cout << "\t\t\t *********************************************"<<endl;
     cout << "\t\t\t Selecciona tu opcion: ";
     cin>>choice;
@@ -42,7 +39,7 @@ void menus::menuGeneral(){
     case 1:
     	/*do
     	{*/
-    		mantenimientos();
+    		/*mantenimientos();*/
     		/*cout<<"\n\t\t\t Agrega otra persona(Y,N): ";
     		cin>>x;
 		}while(x=='y'||x=='Y');*/
@@ -53,21 +50,12 @@ void menus::menuGeneral(){
 	case 3:
 		/*gomu.menu();*/
 		break;
-	case 4:
-		/*tilde.menu1();*/
-		break;
-    case 5:
-       /*met.menu();*/
-        break;
-    case 6:
-        /*punto.menu();*/
-        break;
-    case 7:
+    case 4:
 	    exit(0);
 		break;
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
 		cin.get();
 	}
-    }while(choice!= 7);
+    }while(choice!= 4);
 }
