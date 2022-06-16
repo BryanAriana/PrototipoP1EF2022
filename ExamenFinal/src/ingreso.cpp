@@ -23,7 +23,7 @@ bool ingreso::loginUsuarios()
     do{
         system("cls");
         cout <<"\t\t\t *********************************************"<<endl;;
-        cout <<"\t\t\t             | LOGIN - Grupo #6 | "<<endl;
+        cout <<"\t\t\t             | LOGIN | "<<endl;
         cout <<"\t\t\t *********************************************"<<endl;
         cout <<"\t\t\t Usuario: ";
         getline(cin, usuario);
