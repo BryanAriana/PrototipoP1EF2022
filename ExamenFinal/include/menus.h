@@ -10,7 +10,7 @@ class menus
         menus();
         virtual ~menus();
         void menuGeneral();
-        void mantenimientos();
+        void catalogo();
 
     protected:
 
