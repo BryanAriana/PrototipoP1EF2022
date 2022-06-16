@@ -1,4 +1,5 @@
 #include "menus.h"
+#include "productos.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -25,15 +26,15 @@ void menus::menuGeneral(){
     cout << "\t\t\t    | Menu General - Bryan Alejandro Ariana Juarez 9959-21-2832 |"<<endl;
     cout << "\t\t\t *******************************************************************"<<endl;
     cout << "\t\t\t  1. Catalogos"<<endl;
-    cout << "\t\t\t  2. Procesos"<<endl;
-    cout << "\t\t\t  3. Informes"<<endl;
-    cout << "\t\t\t  4. Salir"<<endl;
+    cout << "\t\t\t  2. Informes"<<endl;
+    cout << "\t\t\t  3. Salir"<<endl;
 
     cout << "\t\t\t *********************************************"<<endl;
     cout << "\t\t\t Opcion a escoger : [1/2/3/4]"<<endl;
     cout << "\t\t\t *********************************************"<<endl;
     cout << "\t\t\t Selecciona tu opcion: ";
     cin>>choice;
+
  switch(choice)
     {
     case 1:
@@ -42,10 +43,7 @@ void menus::menuGeneral(){
 	case 2:
 		/*genera.menuprincipalgeneracionnomina();*/
 		break;
-	case 3:
-		/*gomu.menu();*/
-		break;
-    case 4:
+    case 3:
 	    exit(0);
 		break;
 	default:
@@ -78,10 +76,11 @@ void menus::catalogo(){
         cout << "\t\t\t *********************************************"<<endl;
         cout << "\t\t\t Selecciona tu opcion: ";
         cin>>choice;
+        productos gomu;
  switch(choice)
         {
     case 1:
-    	/*gomu.menu();*/
+    	gomu.menu();
 		break;
     case 2:
 		/*po.menu();*/

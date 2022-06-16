@@ -16,17 +16,32 @@
 	<iomanip>
 	<cstdlib>
 
-1655399074 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
+1655399219 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
 
-1655397270 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
+1655400811 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
 	"menus.h"
+	"productos.h"
 	<iostream>
 	<fstream>
 	<iomanip>
 	<cstdlib>
 
-1655397929 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\catalogos.cpp
+1655399219 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\catalogos.cpp
 	"catalogos.h"
 
-1655397929 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\catalogos.h
+1655399219 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\catalogos.h
+
+1655401787 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\productos.cpp
+	<iostream>
+	<istream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	"productos.h"
+	"menus.h"
+
+1655401787 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\productos.h
 
