@@ -34,9 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/catalogos.h" />
 		<Unit filename="include/ingreso.h" />
 		<Unit filename="include/menus.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/catalogos.cpp" />
 		<Unit filename="src/ingreso.cpp" />
 		<Unit filename="src/menus.cpp" />
 		<Extensions>

@@ -37,12 +37,7 @@ void menus::menuGeneral(){
  switch(choice)
     {
     case 1:
-    	/*do
-    	{*/
-    		/*mantenimientos();*/
-    		/*cout<<"\n\t\t\t Agrega otra persona(Y,N): ";
-    		cin>>x;
-		}while(x=='y'||x=='Y');*/
+    	catalogo();
 		break;
 	case 2:
 		/*genera.menuprincipalgeneracionnomina();*/
@@ -58,4 +53,53 @@ void menus::menuGeneral(){
 		cin.get();
 	}
     }while(choice!= 4);
+}
+void menus::catalogo(){
+    int choice;
+    char s;
+    do
+    {
+
+
+    system ("cls");
+
+        cout << "\t\t\t *********************************************"<<endl;
+        cout << "\t\t\t      | Catalogos |"<<endl;
+        cout << "\t\t\t *********************************************"<<endl;
+        cout << "\t\t\t  1. Productos"<<endl;
+        cout << "\t\t\t  2. Clientes"<<endl;
+        cout << "\t\t\t  3. Vendedores"<<endl;
+        cout << "\t\t\t  4. Marcas"<<endl;
+        cout << "\t\t\t  5. Lineas"<<endl;
+        cout << "\t\t\t  6. Salir"<<endl;
+
+        cout << "\t\t\t *********************************************"<<endl;
+        cout << "\t\t\t Opcion a escoger : [1/2/3/4/5/6]"<<endl;
+        cout << "\t\t\t *********************************************"<<endl;
+        cout << "\t\t\t Selecciona tu opcion: ";
+        cin>>choice;
+ switch(choice)
+        {
+    case 1:
+    	/*gomu.menu();*/
+		break;
+    case 2:
+		/*po.menu();*/
+		break;
+	case 3:
+		/*coma.menu2();*/
+		break;
+	case 4:
+		/*punto.escribirOpcion();*/
+		break;
+	case 5:
+		/*mar.menu();*/
+		break;
+	case 6:
+		menuGeneral();
+	default:
+		cout << "\t\t\t Opcion invalida...Por favor prueba otra vez..";
+	}
+    }while(choice!= 6);
+
 }

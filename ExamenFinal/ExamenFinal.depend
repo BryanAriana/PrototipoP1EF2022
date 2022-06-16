@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1655396693 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\ingreso.cpp
+1655397270 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\ingreso.cpp
 	"ingreso.h"
 	<cstdlib>
 	<conio.h>
 	<iostream>
 
-1655396693 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\ingreso.h
+1655397270 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\ingreso.h
 
-1655396693 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\main.cpp
+1655397270 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\main.cpp
 	<iostream>
 	<conio.h>
 	"ingreso.h"
@@ -16,12 +16,17 @@
 	<iomanip>
 	<cstdlib>
 
-1655396693 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
+1655399074 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\menus.h
 
-1655396693 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
+1655397270 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\menus.cpp
 	"menus.h"
 	<iostream>
 	<fstream>
 	<iomanip>
 	<cstdlib>
+
+1655397929 source:c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\src\catalogos.cpp
+	"catalogos.h"
+
+1655397929 c:\users\bryan\clonacion\prototipop1ef2022\examenfinal\include\catalogos.h
 
